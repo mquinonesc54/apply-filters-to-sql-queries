@@ -60,10 +60,31 @@ To filter for employees who are in the Marketing department as well as being loc
 
 In my first condition, using the ```WHERE``` clause with the ```AND``` filter, I search for employees in the Marketing department using ```department = ‘Marketing’```. Then, in the second condition, I used ```office LIKE ‘East%’``` to filter for employees in the East building.
 
-## Retrieve employees in Fiance or Sales
+## Retrieve employees in Finance or Sales
 
-Additionally the employees in the Sales and Finance departments also require security updates. However, they require a different update. Therefore, I will need to obtain information on employees from only these two departments.
+Additionally, the employees in the Sales and Finance departments also require security updates. However, they require a different update. Therefore, I will need to obtain information on employees from only these two departments.
 
 The following code shows how I filtered out employee machines from employees in the Marketing or Sales department.
 
 ![sales or finance department](https://i.imgur.com/gUGgf7p.png)
+
+The query shown in the screenshot consists of two parts. The first part is my query, while the second part displays a section of the output.
+
+First I selected all the data from the ```employees``` table using ```SELECT * FROM employees```. After that, I used a ```WHERE``` clause with an ```OR``` to filter out employees who are in the Finance and Sales department. The ```OR``` operator was used instead of an ```AND``` because I wanted an output of those who are in either department. The first condition used was ```department = ‘sales’```. This will filter the employees who are in the Sales department. In the next condition, I used ```department = ‘Finance’``` to filter out employees who are in the Finance department.
+
+## Retrieve all employees not in IT
+
+My team is required to make one more update on employee machines. This update is for every employee who is not part of the Information Technology department.
+
+The following code demonstrates how I filtered for employee machines from employees who are not in the Information Technology department.
+
+![Filter for IT department](https://i.imgur.com/fdjcbhy.png)
+
+The query shown in the screenshot consists of two parts. The first part is my query, while the second part displays a section of the output.
+
+First I selected all the data from the ```employees``` table using ```SELECT * FROM employees```. The next step was using a ```WHERE``` clause with a ```NOT``` filter which allowed me to filter out employees who are not part of the Information Technology department.
+
+## Summary
+
+To obtain specific details about login attempts and employee machines, I utilized filters in SQL queries. I worked with two tables, namely ```log_in_attempts``` and ```employees```. By employing the operators ```AND```, ```OR```, and ```NOT```, I could refine my search to extract the desired information for each task. Subsequently, I was able to use the asterisk (```*```) wildcard to select all data from columns within a table. Lastly, I made use of the ```LIKE``` operator along with the percentage sign (```%```) wildcard to uncover specific patterns within the data.
+
